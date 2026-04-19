@@ -83,16 +83,34 @@ Looks up a move, ability, or item from `cache/*.jsonl` (PokeAPI data cached loca
 
 **Use this instead of guessing from training knowledge** for move/ability effects, targets, priority brackets, power/accuracy, or item descriptions. This is the authoritative source.
 
-**Champions caveat:** the cache is mainline Scarlet/Violet data, so some entries differ from Champions:
-- **Removed moves:** Power Up Punch, and possibly others — cross-reference before recommending
-- **Removed items:** Life Orb, Flame Orb, Choice Specs, Choice Band, Assault Vest, Rocky Helmet, etc. — see items list in this file
-- **New abilities (not in PokeAPI cache):** Mega Sol (Mega Meganium), Dragonize (Mega Feraligatr), Piercing Drill (Mega Excadrill), Spicy Spray (Mega Scovillain), Stalwart (Mega Skarmory) — these are Champions-original and must come from `research/meta-snapshot.md` or this file
-- **Updated abilities:** Unseen Fist now passes contact moves through Protect at 25% damage (was full block in mainline)
+**Champions caveat:** the cache is mainline Scarlet/Violet data, so some entries differ from Champions. For authoritative Champions facts, also check the Champions-specific caches below.
 
-To rebuild the cache (one-time, ~53 min at default 1s delay):
+To rebuild the mainline cache (one-time, ~53 min at default 1s delay):
 ```bash
 python3 scripts/build_cache.py all
 ```
+
+### Champions Authoritative Cache (Serebii)
+```bash
+python3 scripts/lookup.py "spicy spray"                    # auto-finds Champions ability
+python3 scripts/lookup.py scovillainite                    # Mega stone
+python3 scripts/lookup.py --category champions_items <name>
+python3 scripts/lookup.py --category champions_abilities <name>
+```
+`lookup.py` also searches two additional caches scraped from Serebii's Champions pages:
+- **`cache/champions_items.jsonl`** — all 138 Champions-legal held items with effect (VP cost also parsed where available, but treat it as best-effort only — check the shop for authoritative pricing). Authoritative "is this item in Champions?" source.
+- **`cache/champions_abilities.jsonl`** — 28 entries across three kinds:
+  - `kind: new` — Champions-original abilities (Dragonize, Mega Sol, Piercing Drill, Spicy Spray)
+  - `kind: updated` — abilities whose effect changed from mainline (e.g. Unseen Fist)
+  - `kind: mega` — **Champions-specific** Mega abilities only (brand-new Megas like Clefable/Starmie, or existing Megas whose ability changed). **⚠️ Traditional Megas whose ability is unchanged from mainline (Charizard Y → Drought, Kangaskhan → Parental Bond, Gengar → Shadow Tag, Garchomp → Sand Force, etc.) are NOT in this cache** — for those, use training knowledge or the mainline PokeAPI abilities cache.
+
+When the same name exists in both mainline and Champions caches, both are returned — the Champions entry is authoritative for "does it exist / does it work differently?" while the mainline entry has mechanics detail (accuracy, priority, damage class, etc).
+
+To rebuild (~5 seconds, 4 Serebii page fetches with polite delay):
+```bash
+python3 scripts/build_champions_cache.py
+```
+Re-run when Serebii updates (new Megas, patched abilities, item changes).
 
 ### Champions Movepool Query (which mons learn what)
 ```bash
@@ -166,32 +184,34 @@ Pikalytics "championspreview" data comes from Showdown/ladder and may include it
 
 The item pool is much smaller than mainline games. **Notable missing items: Life Orb, Choice Band, Choice Specs, Assault Vest, Rocky Helmet, Flame Orb, Toxic Orb, Loaded Dice, Eject Button, Safety Goggles, Clear Amulet, Throat Spray, Air Balloon, Covert Cloak, Mirror Herb.** Self-status-inducing items (Flame Orb, Toxic Orb) are all removed, which kills Guts-activation and Poison Heal self-activation strategies — mons that depend on these (Conkeldurr Guts, Gliscor Poison Heal) need alternate abilities or accept they won't self-activate.
 
-### Competitive Items
-| Item | Effect | Cost |
-|------|--------|------|
-| **Choice Scarf** | +Speed, but locked to one move | Starting |
-| **Focus Sash** | Survive a KO at 1 HP (once) | Starting |
-| **Leftovers** | Restore HP each turn | Starting |
-| **White Herb** | Restore lowered stats (once) | Starting |
-| **Mental Herb** | Cure Taunt/Encore/etc (once) | 1000 VP |
-| **Focus Band** | Chance to survive KO at 1 HP | Starting |
-| **Scope Lens** | Boosts critical hit ratio | 1000 VP |
-| **Shell Bell** | Heal when dealing damage | 1000 VP |
-| **Bright Powder** | Lower opponent accuracy | Starting |
-| **King's Rock** | Chance to flinch on hit | Starting |
-| **Quick Claw** | Chance to move first | Starting |
-| **Light Ball** | Boosts Pikachu's Atk + SpAtk | 1000 VP |
+*VP costs omitted — look them up in the shop if needed. Use `scripts/lookup.py <item>` or `cache/champions_items.jsonl` for authoritative presence checks.*
 
-### Type-Boosting Items (20% boost, 700 VP each)
+### Competitive Items
+| Item | Effect |
+|------|--------|
+| **Choice Scarf** | +Speed, but locked to one move |
+| **Focus Sash** | Survive a KO at 1 HP (once) |
+| **Leftovers** | Restore HP each turn |
+| **White Herb** | Restore lowered stats (once) |
+| **Mental Herb** | Cure Taunt/Encore/etc (once) |
+| **Focus Band** | Chance to survive KO at 1 HP |
+| **Scope Lens** | Boosts critical hit ratio |
+| **Shell Bell** | Heal when dealing damage |
+| **Bright Powder** | Lower opponent accuracy |
+| **King's Rock** | Chance to flinch on hit |
+| **Quick Claw** | Chance to move first |
+| **Light Ball** | Boosts Pikachu's Atk + SpAtk |
+
+### Type-Boosting Items (20% boost)
 Black Belt (Fighting), Black Glasses (Dark), Charcoal (Fire), Dragon Fang (Dragon), Fairy Feather (Fairy), Hard Stone (Rock), Magnet (Electric), Metal Coat (Steel), Miracle Seed (Grass), Mystic Water (Water), Never-Melt Ice (Ice), Poison Barb (Poison), Sharp Beak (Flying), Silk Scarf (Normal), Silver Powder (Bug), Soft Sand (Ground), Spell Tag (Ghost), Twisted Spoon (Psychic)
 
 ### Berries
-- **Sitrus Berry**: Restore HP when low (starting)
-- **Lum Berry**: Cure any status condition (starting)
-- **Chesto/Cheri/Pecha/Rawst/Aspear/Persim**: Cure specific status (400 VP)
-- **Type-resist berries** (reduce super-effective hit): Occa (Fire), Passho (Water), Rindo (Grass), Wacan (Electric), Yache (Ice), Chople (Fighting), Kebia (Poison), Shuca (Ground), Coba (Flying), Payapa (Psychic), Tanga (Bug), Charti (Rock), Kasib (Ghost), Haban (Dragon), Colbur (Dark), Babiri (Steel), Roseli (Fairy), Chilan (Normal) — all 400 VP
+- **Sitrus Berry** — Restore HP when low
+- **Lum Berry** — Cure any status condition
+- **Chesto/Cheri/Pecha/Rawst/Aspear/Persim** — Cure specific status
+- **Type-resist berries** (reduce super-effective hit): Occa (Fire), Passho (Water), Rindo (Grass), Wacan (Electric), Yache (Ice), Chople (Fighting), Kebia (Poison), Shuca (Ground), Coba (Flying), Payapa (Psychic), Tanga (Bug), Charti (Rock), Kasib (Ghost), Haban (Dragon), Colbur (Dark), Babiri (Steel), Roseli (Fairy), Chilan (Normal)
 
-### Mega Stones (2000 VP each)
+### Mega Stones
 One per team. Pokemon Mega Evolves during battle. See mega list below for which Pokemon can Mega Evolve.
 
 ## Key Abilities Reference

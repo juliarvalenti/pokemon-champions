@@ -32,6 +32,7 @@
 - **SP:** HP 32 / Def 2 / Speed 32
 - **Moves:** Psychic Terrain, Fake Out, Helping Hand, Light Screen
 - *Note: **Meowstic-MALE has Prankster**. Meowstic-F has Competitive. Make sure you recruit/recognize the male form.*
+- **⚠️ DO NOT BUY MEOWSTICITE.** Mega Meowstic's ability is **Trace** (per Serebii Champions mega-abilities page), not Prankster. Megaing her deletes the entire value of this slot. She stays in regular form forever on this team.
 
 ### Alakazam (Mega) — Expanding Force nuke
 - **Item:** Alakazite *(2000 VP Mega Stone)*

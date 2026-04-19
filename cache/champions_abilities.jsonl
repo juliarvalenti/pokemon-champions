@@ -1,0 +1,28 @@
+{"name": "piercing-drill", "display_name": "Piercing Drill", "kind": "new", "effect": "When the Pokemon uses contact moves, it can hit even targets that are protecting themselves, dealing 1/4 of the damage that the move would otherwise deal. Everything aside from the target's protective effects is still triggered."}
+{"name": "dragonize", "display_name": "Dragonize", "kind": "new", "effect": "The Pokemon's Normal-type moves become Dragon-type moves and their power is boosted by 20%."}
+{"name": "mega-sol", "display_name": "Mega Sol", "kind": "new", "effect": "Even when the sunlight has not turned harsh, the Pokemon can use its moves as if the weather were harsh sunlight."}
+{"name": "spicy-spray", "display_name": "Spicy Spray", "kind": "new", "effect": "When the Pokemon takes damage from a move, it burns the attacker."}
+{"name": "unseen-fist", "display_name": "Unseen Fist", "kind": "updated", "effect": "The Pokemon can deal damage with moves that make physical contact, even if the target is protected. This damage is reduced to 25%", "change": "Reduces the damage inflitced by the Pok\u00e9mon to 25% of the damage that would normally be inflicted if target wasn't protected"}
+{"name": "mega-clefable", "display_name": "Mega Clefable", "kind": "mega", "pokemon": "clefable", "ability": "magic-bounce", "ability_display": "Magic Bounce"}
+{"name": "mega-victreebel", "display_name": "Mega Victreebel", "kind": "mega", "pokemon": "victreebel", "ability": "innards-out", "ability_display": "Innards Out"}
+{"name": "mega-starmie", "display_name": "Mega Starmie", "kind": "mega", "pokemon": "starmie", "ability": "huge-power", "ability_display": "Huge Power"}
+{"name": "mega-dragonite", "display_name": "Mega Dragonite", "kind": "mega", "pokemon": "dragonite", "ability": "multiscale", "ability_display": "Multiscale"}
+{"name": "mega-meganium", "display_name": "Mega Meganium", "kind": "mega", "pokemon": "meganium", "ability": "mega-sol", "ability_display": "Mega Sol"}
+{"name": "mega-feraligatr", "display_name": "Mega Feraligatr", "kind": "mega", "pokemon": "feraligatr", "ability": "dragonize", "ability_display": "Dragonize"}
+{"name": "mega-skarmory", "display_name": "Mega Skarmory", "kind": "mega", "pokemon": "skarmory", "ability": "stalwart", "ability_display": "Stalwart"}
+{"name": "mega-chimecho", "display_name": "Mega Chimecho", "kind": "mega", "pokemon": "chimecho", "ability": "levitate", "ability_display": "Levitate"}
+{"name": "mega-froslass", "display_name": "Mega Froslass", "kind": "mega", "pokemon": "froslass", "ability": "snow-warning", "ability_display": "Snow Warning"}
+{"name": "mega-emboar", "display_name": "Mega Emboar", "kind": "mega", "pokemon": "emboar", "ability": "mold-breaker", "ability_display": "Mold Breaker"}
+{"name": "mega-excadrill", "display_name": "Mega Excadrill", "kind": "mega", "pokemon": "excadrill", "ability": "piercing-drill", "ability_display": "Piercing Drill"}
+{"name": "mega-chandelure", "display_name": "Mega Chandelure", "kind": "mega", "pokemon": "chandelure", "ability": "infiltrator", "ability_display": "Infiltrator"}
+{"name": "mega-golurk", "display_name": "Mega Golurk", "kind": "mega", "pokemon": "golurk", "ability": "unseen-fist", "ability_display": "Unseen Fist"}
+{"name": "mega-chesnaught", "display_name": "Mega Chesnaught", "kind": "mega", "pokemon": "chesnaught", "ability": "bulletproof", "ability_display": "Bulletproof"}
+{"name": "mega-delphox", "display_name": "Mega Delphox", "kind": "mega", "pokemon": "delphox", "ability": "levitate", "ability_display": "Levitate"}
+{"name": "mega-greninja", "display_name": "Mega Greninja", "kind": "mega", "pokemon": "greninja", "ability": "protean", "ability_display": "Protean"}
+{"name": "mega-floette", "display_name": "Mega Floette", "kind": "mega", "pokemon": "floette", "ability": "fairy-aura", "ability_display": "Fairy Aura"}
+{"name": "mega-meowstic", "display_name": "Mega Meowstic", "kind": "mega", "pokemon": "meowstic", "ability": "trace", "ability_display": "Trace"}
+{"name": "mega-hawlucha", "display_name": "Mega Hawlucha", "kind": "mega", "pokemon": "hawlucha", "ability": "no-guard", "ability_display": "No Guard"}
+{"name": "mega-crabominable", "display_name": "Mega Crabominable", "kind": "mega", "pokemon": "crabominable", "ability": "iron-fist", "ability_display": "Iron Fist"}
+{"name": "mega-drampa", "display_name": "Mega Drampa", "kind": "mega", "pokemon": "drampa", "ability": "berserk", "ability_display": "Berserk"}
+{"name": "mega-scovillain", "display_name": "Mega Scovillain", "kind": "mega", "pokemon": "scovillain", "ability": "spicy-spray", "ability_display": "Spicy Spray"}
+{"name": "mega-glimmora", "display_name": "Mega Glimmora", "kind": "mega", "pokemon": "glimmora", "ability": "adaptability", "ability_display": "Adaptability"}
