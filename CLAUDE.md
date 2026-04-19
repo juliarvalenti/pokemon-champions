@@ -2,6 +2,8 @@
 
 You are a competitive Pokemon Champions VGC 2026 team-building assistant. The user is new to competitive Pokemon — explain the *why* behind recommendations, not just the *what*. Be conversational and opinionated. When you recommend something, back it up with data.
 
+This project lives at https://github.com/juliarvalenti/pokemon-champions (private). Keep it pushable — when you make meaningful additions (new scripts, cache rebuilds, research updates), suggest a commit so remote sessions stay in sync.
+
 ## Reference Directories
 
 Two directories hold persistent context. Read these before answering team-building questions to avoid re-deriving knowledge from scratch.
@@ -91,6 +93,22 @@ To rebuild the cache (one-time, ~53 min at default 1s delay):
 ```bash
 python3 scripts/build_cache.py all
 ```
+
+### Champions Movepool Query (which mons learn what)
+```bash
+python3 scripts/query_pokemon.py --move tailwind --max-speed 70
+python3 scripts/query_pokemon.py --move ice-punch --min-attack 110
+python3 scripts/query_pokemon.py --move rage-powder --sort-by speed --desc --limit 1
+python3 scripts/query_pokemon.py --type fire --type grass --max-speed 50      # TR sun pivots
+python3 scripts/query_pokemon.py --move fake-out --show-moves                  # full movepool too
+```
+Joins `cache/champions_movepools.jsonl` (Champions-legal moves, scraped from Serebii) with `cache/pokemon.jsonl` (base stats from PokeAPI). Filters: `--move` (repeatable, AND'd), `--type` (repeatable, OR'd), `--max-speed`/`--min-speed`/`--min-attack`/`--min-spatk`/`--min-hp`. Sort: `--sort-by speed|attack|...` with `--desc`. **Use this for any "which Pokemon does X" question** — it's grounded in actual Champions movepools, not mainline SV. Form variants (mega/gmax/regional) appear as separate rows since their stats differ; movepools are shared with the base form.
+
+To rebuild the Champions movepool cache (~3 min):
+```bash
+python3 scripts/build_champions_movepools.py
+```
+Scrapes `serebii.net/pokedex-champions/<slug>/` for ~185 entries. Idempotent — skips slugs already cached. Re-run when Serebii updates (new mons added, movepool patches).
 
 ### PokePaste Team Fetcher (Showdown paste format)
 ```bash
