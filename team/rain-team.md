@@ -15,26 +15,40 @@ Rain is the dominant winning archetype in recent Champions tournaments (as of 20
 
 ## Bring-4 default
 
-You bring 6, pick 4. Mega Dnite is precious (only one Mega slot) and is brought in ~80% of games.
+You bring 6, pick 4. The team operates in **two modes** with Dnite + Bascu as always-brings and the other 2 slots flexed by matchup.
 
-- **Default 4:** Pelipper / Basculegion / Incineroar / **Mega Dragonite**
-- **Swap in Archaludon** → vs sun, vs opposing rain (Electro Shot deletes their Pelipper/Gyara), vs Charizard Y
-- **Swap in Primarina** → vs Ice-heavy teams (Froslass, Mamoswine), vs rain mirrors with Mega Dnite (Dragon immunity), vs Dragon cores
+### Mode A — Rain mode (default)
 
-## Gameplan
+**Bring:** Pelipper + Archaludon + Mega Dnite + Basculegion
+**Lead:** Pelipper + Archaludon
+**Plan:** Pel sets rain T1, Arch Electro Shot T1 (1-turn 130 BP nuke in rain). Bascu cleans up, Dnite comes in under Multiscale.
 
-**Default lead: Pelipper + Basculegion.**
-- Turn 1: Pelipper sets rain via Drizzle on switch-in. Basculegion Scarf Wave Crash or Last Respects a threat.
-- Turn 2: Pelipper Tailwind (you now have speed + rain). Basculegion keeps clicking, or pivot Flip Turn → Mega Dragonite.
-- Turn 3+: Mega Dragonite comes in under Tailwind + rain, eats one hit with Multiscale, then Hurricanes/Ice Beams depending on target.
+Use for default matchups, opposing rain mirrors, sun (Drizzle overrides Drought), Gyarados, most offensive teams.
 
-**Alt lead vs offense / priority-heavy leads (Sneasler, Kingambit): Pelipper + Incineroar.**
-- Incineroar Fake Out neuters the biggest turn-1 threat, Pelipper sets rain safely. Parting Shot on turn 2 pivots into Archaludon or Dnite with -1/-1 on the opponent. Slower but safer.
+### Mode B — Pivot mode (non-rain / anti-rain matchups)
 
-**Alt lead vs sun / opposing rain Pelipper / Gyarados: Pelipper + Archaludon.**
-- Pelipper Drizzle → Archaludon **Electro Shot turn 1** (1-turn move in rain, 130 BP Electric nuke). Melts opposing weather setters immediately. Risk: no Fake Out, so watch for opposing priority.
+**Bring:** Garchomp + Whimsicott + Mega Dnite + Basculegion
+**Lead:** Garchomp + Whimsicott
+**Plan:** Whimsi Prankster Tailwind T1, Garchomp EQ or Rock Slide. Dnite comes in under Tailwind, Bascu cleans up.
 
-**Rain mirror note:** Both players have Scarf Bascu → 50/50 speed tie. Prefer to lead Pelipper + Bascu, click Wave Crash on *their* Bascu turn 1. Keep Mega Dnite for turn 2+ (Ice Beam on their Dnite is the mirror-breaker).
+Use when rain will get neutralized: **TTar sand** (overrides rain), **TR teams** (Pel/Arch too slow), **fast Taunt leads** (Grimmsnarl, Whimsicott), **Rotom-Wash** / **opposing Garchomp** cores (Electro Shot gets walled).
+
+### Hard rule: don't pair Dnite + Garchomp against known Ice users
+
+Blizzard is spread damage. Dnite is 4x Ice, Garchomp is 4x Ice. Blizzard hits both = you lose 2 mons at once. **Vs Froslass, Mamoswine, Walrein: pick Arch over Garchomp for the 5th slot.** Let Bascu (Ice 0.5x) and Arch (Ice neutral) tank the Ice hits.
+
+### Lead override quick table
+
+| Matchup | Lead | Backline |
+|---|---|---|
+| **Default / unknown** | Pel + Arch | Dnite + Bascu |
+| **Sun** (Charizard Y + Venusaur) | Pel + Arch | Dnite + Bascu — Electro Shot melts Charizard |
+| **Rain mirror** | Pel + Bascu (Scarf Wave Crash their Bascu T1) | Dnite + Arch — Ice Beam on their Dnite is the breaker |
+| **Sand (TTar/Exca)** | Garchomp + Whimsicott | Dnite + Bascu — **Mode B**, bench Pel/Arch |
+| **Froslass / Ice cores** | Pel + Arch | Dnite + Bascu — **DO NOT bring Garchomp**, Arch Flash Cannon nukes Froslass |
+| **Sneasler offense** | Whimsicott + Garchomp | Dnite + Bascu — **Mode B**, Whimsi Fighting resist + Rough Skin chip |
+| **Trick Room** | Whimsicott + Garchomp | Dnite + Bascu — Whimsi Encore locks TR setter, Mode B |
+| **Scovillain glue team** | Pel + Mega Dnite | Bascu + Arch — Hurricane T1 on Scovillain, don't lead Bascu (burned on contact) |
 
 ## Active 6
 
@@ -55,13 +69,14 @@ You bring 6, pick 4. Mega Dnite is precious (only one Mega slot) and is brought 
 - *Last Respects scales with fainted allies — it's your comeback button. Aqua Jet is priority cleanup. Wave Crash is the nuke. Flip Turn for pivoting out of locked moves.*
 - ⚠️ **Choice Scarf locks you to one move** — pick deliberately. Switch out to reset the lock.
 
-### Archaludon (secondary win con / Steel pivot)
-- **Item:** Leftovers
+### Archaludon (primary win con / Electro Shot nuke + Stamina tank)
+- **Item:** Shell Bell *(heals per hit dealt — synergizes with Stamina loop: take a hit → +1 Def → Shell Bell chip back → repeat.)*
 - **Ability:** Stamina *(+1 Def every time it's hit — snowballs vs physical)*
 - **Nature:** Modest (+SpAtk, -Atk)
 - **SP:** HP 32 / SpAtk 32 / SpDef 2
-- **Moves:** Electro Shot, Draco Meteor, Flash Cannon, Protect
-- *Electro Shot is **1-turn in rain** (skips charge) and becomes a 130 BP Electric nuke that deletes opposing Pelipper / Charizard / Gyarados. Steel/Dragon typing walls Fairies and Ice.*
+- **Moves:** Electro Shot, **Dragon Pulse**, Flash Cannon, Protect
+- *Electro Shot is **1-turn in rain** (skips charge) and becomes a 130 BP Electric nuke that deletes opposing Pelipper / Charizard / Gyarados. Dragon Pulse replaced Draco Meteor — 85 BP, no SpA debuff, **repeatable every turn**. Draco's "click once, become dead" playstyle didn't match Arch's tank-and-spam identity. Steel/Dragon typing walls Fairies and Ice.*
+- *Julia's actual game plan: **lead Pelipper + Archaludon**, rain up T1, Electro Shot T1 = immediate nuke. Bascu/Dnite in the back for cleanup.*
 
 ### Dragonite (Mega) ⭐ (Tailwind + Hurricane centerpiece)
 - **Item:** Dragoninite *(2000 VP — the Mega slot of this team)*
@@ -71,41 +86,47 @@ You bring 6, pick 4. Mega Dnite is precious (only one Mega slot) and is brought 
 - **Moves:** Hurricane, Draco Meteor, Ice Beam, Protect
 - *Hurricane is 100% accurate in rain → Mega Dragonite's 135 SpAtk + STAB + rain = OHKOs most neutral targets. Multiscale eats the first hit even before mega; **Protect extends Multiscale's life by another turn**. **Ice Beam is the rain-mirror breaker** — 4x on opposing Mega Dragonite, Garchomp, Salamence. Since Draco Meteor drops your SpAtk two stages after one click (one-shot nuke), Ice Beam is your **repeatable** Dragon button. Tailwind intentionally dropped — Pelipper handles it and Bascu Scarf is a second speed line already.*
 
-### Incineroar (Fake Out + Intimidate glue)
-- **Item:** Sitrus Berry
-- **Ability:** Intimidate
-- **Nature:** Careful (+SpDef, -SpAtk)
-- **SP:** Attack / SpDef
-- **Moves:** Fake Out, Parting Shot, Flare Blitz, Darkest Lariat
-- ✅ **Already trained — reuse sun-team build as-is. No VP cost.**
-- *One individual Incineroar = one moveset. This set works identically for both teams.*
+### Garchomp (Electric switch-in + Ground coverage) 🆕
+- **Item:** Soft Sand
+- **Ability:** Rough Skin *(chips physical attackers on contact — punishes Sneasler Close Combat, opposing Bascu Wave Crash, etc.)*
+- **Nature:** Jolly (+Speed, -SpAtk)
+- **SP:** Attack / Speed
+- **Moves:** Earthquake, Dragon Claw, Rock Slide, Protect
+- ✅ **Already trained on sun team — reuse as-is, zero VP cost.**
 
-### Primarina (Ice/Dragon pivot + rain damage amplifier) 🆕
-- **Item:** Shell Bell *(1000 VP — heals on damage dealt. Hyper Voice chip every turn = steady recovery)*
-- **Ability:** Liquid Voice *(converts sound moves to Water-type — mandatory for the Hyper Voice-as-Water-spread gimmick)*
-- **Nature:** Modest (+SpAtk, -Atk)
-- **SP:** HP 21 / Def 7 / SpAtk 32 / SpDef 2 / Spe 4 *(mirrors Mauntra's climbing spread — minimum Spe creep to outspeed paralyzed Timid Mega Dragonite)*
-- **Moves:** Hyper Voice, Moonblast, Calm Mind, Protect
-- 🆕 **Not yet trained — promoted from bench. Full train required (moves + nature + SP).**
+*Replaced Incineroar (was a dead slot in Julia's actual play pattern — dying to Sneasler Close Combat, never bringing him). Garchomp fills real structural holes:*
+- **Ground typing = IMMUNE to Electric.** This patches the team's biggest defensive gap — if Pelipper is about to eat a Thunderbolt, Garchomp is a free switch-in (0x damage). Previously the team had no Electric answer outside Archaludon.
+- **Earthquake** hits Steel walls (opposing Aggron, Archaludon mirror, Tyranitar) and Electric threats (Raichu, opposing Rotom-W if grounded) that the core team can't touch. Does NOT hit Pelipper or Mega Dragonite (both Flying-immune).
+- **Rough Skin** passive chip on Sneasler/Kingambit/Bascu/anyone who uses contact moves. Functions like Intimidate-adjacent pressure.
+- **Rock Slide** pressures Dragonite/Charizard/Aerodactyl matchups.
 
-*Replaced Aegislash (dead slot — Wide Guard overlapped with Pelipper, rarely brought, no offensive pressure). Primarina patches BOTH structural team holes in one mon:*
-- **Ice resist (Water 0.5x)** — previously only Incineroar and Basculegion resisted Ice. Mega Dragonite is **4x Ice** and gets Blizzard-bodied without a pivot. Primarina eats Ice attacks for Dnite.
-- **Dragon immune (Fairy)** — hard-walls opposing Mega Dragonite, Garchomp, Salamence in rain mirrors. This was the original reason we added Ice Beam to Dnite's set; Primarina adds a second answer.
-- **Liquid Voice Hyper Voice** → Hyper Voice becomes a **Water-type spread attack** (hits both opponents). STAB + rain boost = massive doubles damage every turn. Stacks with Incineroar Fake Out → Primarina nuke lines.
-- **Moonblast** — dedicated Dragon-killer backup.
-- **Calm Mind** — late-game wincon. If opponent removes Intimidate / Fake Out pressure, Primarina snowballs behind Pelipper's Wide Guard.
+*One individual Garchomp = one moveset. This set is shared with the sun team. No reskill required.*
 
-**Tradeoffs vs Aegislash:** Lose the Sneasler hard-counter (Ghost immunity to Close Combat) and Wide Guard backup. **Vs Sneasler now**, Incineroar Intimidate + Fake Out is the primary answer; Mega Dnite Hurricane hits Sneasler 2x (Flying vs Fighting). No hard-wall, play tighter.
+### Whimsicott (non-rain pivot + Tailwind insurance) 🆕
+- **Item:** Lum Berry
+- **Ability:** Prankster *(Tailwind goes at +1 priority — always gets up T1 regardless of speed tier, even without Focus Sash)*
+- **Nature:** Calm (+SpDef, -Atk)
+- **SP:** SpDef / HP
+- **Moves:** Moonblast, Encore, Protect, Tailwind
+- ✅ **Already trained on sun team — reuse as-is, zero VP cost.**
 
-**Tradeoffs vs Clefable idea:** Considered Clefable Follow Me + Helping Hand but rejected — Clefable doesn't resist Ice, and the team's worst weakness was Ice (not lack of redirection). Primarina adds real offensive pressure every game instead of a pure support slot.
+*Replaced Primarina (was untrained and rarely brought). Whimsicott solves the real structural problem Julia identified: when Pelipper dies or gets neutralized (sand overwrites rain, Taunt, TTar lead), the team loses its speed control entirely. Whimsicott is the insurance line.*
+
+**What Whimsicott does for the team:**
+- **Prankster Tailwind** — the ONLY backup speed line. If Pel falls, Whimsi clicks Tailwind at priority +1 on her first turn on the field. No other rain team piece has this.
+- **Grass/Fairy typing** — 0.5x Water (rain mirror safety), 0.5x Electric (stacks with Garchomp's Ground immunity for Electric pivot depth), 0.5x Fighting (Sneasler Close Combat switch-in), Dragon immune (opposing Mega Dnite safety).
+- **Encore** — locks opponents into setup/status moves. Huge vs Calm Mind Mega Floette, Quiver Dance Volcarona, Belly Drum Snorlax.
+- **Moonblast** — Fairy STAB hits opposing Dragons (rain mirror Dnite, Garchomp) for 2x.
+
+**Operates as the "non-rain pivot mode" lead** alongside Garchomp when Pel+Arch aren't the right play (sand, TR, anti-rain teams). See bring-4 logic below.
 
 ## Why this beats what we were losing to
 
 | Prior loss | The fix |
 |------------|---------|
-| **Froslass** (TR team got no-Ghost-coverage owned) | Aegislash Flash Cannon is 4x SE on Ice. Incineroar Flare Blitz is 4x. Mega Dragonite Multiscale resists Ice Shard at full HP. Three answers where sun had zero. |
-| **Scovillain + Basculegion sweep** (sun team) | You are now the faster Basculegion (Scarf + Tailwind). Aegislash walls Scovillain's Leaf Storm. Wide Guard shuts down spread Heat Wave. |
-| **Sneasler + Kingambit cores** (everywhere in top cut) | Aegislash is Ghost-type → immune to Close Combat, resists Sucker Punch. This was the structural hole in the sun team. |
+| **Froslass** (TR team got no-Ghost-coverage owned) | **Archaludon Flash Cannon is 2x on Ice AND 2x on Ghost** — dedicated Froslass killer. Bascu (Ice 0.5x) tanks Blizzard. Dnite Ice Beam also hits back. |
+| **Scovillain + Basculegion sweep** (sun team) | You are now the faster Basculegion (Scarf + Pel Tailwind). Dnite Hurricane 2x on Grass. Pel rain overrides their weather setup. |
+| **Sneasler + Kingambit cores** (everywhere in top cut) | Whimsicott Fairy/Grass resists Close Combat 0.5x (safe switch-in). Garchomp Rough Skin chips them on contact. Dnite Hurricane 2x on Fighting. |
 | **Charizard Y sun mirrors** | Pelipper Drizzle overrides Drought on switch-in. Archaludon Electro Shot melts Charizard in rain. Water attackers double in power. |
 
 ## Known bad matchups (acknowledge and play tight)
@@ -116,11 +137,11 @@ You bring 6, pick 4. Mega Dnite is precious (only one Mega slot) and is brought 
 
 ### 🔴 Electric coverage in opponent's back line
 - You have no Ground type. Opposing Archaludon / Rotom-Wash / Raichu hit three of your mons (Pelipper, Basculegion, Mega Dragonite) hard with Electric.
-- **Plan:** Mega Dragonite's Hurricane ignores Ground (Flying-type) and its Multiscale eats the first Electric hit. Primarina is neutral to Electric but Fairy-typing saves her from Dragon coverage. Accept chip damage on Pelipper/Bascu.
+- **Plan:** Garchomp's Ground typing is **immune to Electric** — she's the pivot (swap Pel/Bascu out into her). Whimsicott resists Electric 0.5x as a secondary option. Mega Dnite Hurricane ignores Ground (Flying-type) and Multiscale eats the first hit. Accept chip on Pel/Bascu.
 
 ### 🔴 Trick Room
 - You have no TR breaker and no Taunt user. Farigiraf / Hatterene / Cresselia leads will set TR and your fast mons become liabilities.
-- **Plan:** Incineroar Parting Shot pivot pressure is all you have. Mulligan — this is the weakest matchup. Accept the loss risk.
+- **Plan:** Go to Mode B (Whimsicott + Garchomp lead). **Whimsicott Encore** locks the TR setter into a used move (e.g. if they clicked TR T1, Encore locks them into TR, they can't click it again for 3 turns). Garchomp Earthquake while they're stuck. Still a hard matchup — not guaranteed, play tight.
 
 ## Mega slot conflict
 
@@ -136,10 +157,10 @@ You bring 6, pick 4. Mega Dnite is precious (only one Mega slot) and is brought 
 | Basculegion | Untrained → train | moves/nature/SP + Choice Scarf (starting) |
 | Archaludon | Untrained → train | moves/nature/SP + Leftovers (starting) |
 | Dragonite | Untrained → train | moves/nature/SP + **Dragoninite 2000 VP** |
-| Incineroar | ✅ Trained (sun team) | 0 |
-| Primarina | Untrained → train | moves/nature/SP + **Shell Bell 1000 VP** |
+| **Garchomp** | ✅ Trained (sun team) | 0 — reuses sun team build |
+| **Whimsicott** | ✅ Trained (sun team) | 0 — reuses sun team build |
 
-**Rough estimate:** ~3000 VP for Mega Stone + Shell Bell + 5 full trains. Only Incineroar reuses its existing build.
+**Rough estimate:** ~2000 VP for Dragoninite + 4 rain-specific trains (Pel/Bascu/Arch/Dnite) + Shell Bell for Arch (1000 VP). Garchomp and Whimsicott share their sun-team builds — zero marginal VP for this team.
 
 ## Item audit (no duplicates)
 
@@ -147,9 +168,9 @@ You bring 6, pick 4. Mega Dnite is precious (only one Mega slot) and is brought 
 |-----|------|
 | Pelipper | Focus Sash |
 | Basculegion | Choice Scarf |
-| Archaludon | Leftovers |
+| Archaludon | **Shell Bell** ← swapped from Leftovers |
 | Dragonite (Mega) | Dragoninite |
-| Incineroar | Sitrus Berry |
-| Primarina | Shell Bell |
+| **Garchomp** | Soft Sand |
+| **Whimsicott** | Lum Berry |
 
-✅ Zero item duplicates. Archaludon gets Leftovers (tanks more hits per turn via Stamina + recovery), Primarina gets Shell Bell (heal on damage dealt pairs with repeated Hyper Voice chip).
+✅ Zero item duplicates. Archaludon gets Shell Bell (heal on damage dealt synergizes with Stamina tank loop). Garchomp and Whimsicott reuse their sun-team items.
