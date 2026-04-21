@@ -164,6 +164,14 @@ When the user asks about team building, follow this approach:
 4. **Flag weaknesses honestly.** If a team has a glaring hole, say so and explain how opponents will exploit it.
 5. **Fetch teammate data to fill gaps.** When suggesting a teammate, fetch their data too so you can recommend a specific set.
 
+## Type Chart Trainer (interactive drill)
+
+```bash
+python3 scripts/type_trainer.py
+```
+
+Long-running TUI (rich) that drills Julia on move effectiveness: random Champions-legal attacker + random damaging move vs random defender, she answers `0 / 0.25 / 0.5 / 1 / 2 / 4`, gets a per-type breakdown. Every attempt appends to `data/type_quiz_log.jsonl` with timestamp, attacker/defender/types, move, user answer, correct answer, and per-type multipliers — enough to graph accuracy-over-time or per-type weak spots later. Runs until `q` or Ctrl+C. Not callable from this Claude session (interactive), Julia runs it herself; read the log if she asks about her progress.
+
 ## Authoritative Champions References (Serebii)
 
 **Serebii.net is the gold standard for Champions-specific facts.** When you need to verify whether an item, ability, Pokemon, or mechanic exists in Champions (as opposed to mainline Scarlet/Violet), fetch the relevant Serebii Champions page. Treat Serebii as more authoritative than your training knowledge, PokeAPI cache (which is generic SV data), or Pikalytics (which has Showdown/ladder bleed).
