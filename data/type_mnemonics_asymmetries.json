@@ -1,0 +1,41 @@
+{
+  "_comment": "Override mnemonics that explicitly call out an asymmetric matchup — where atk→def differs from def→atk. Key = 'attacker>defender'. When present, these take precedence over data/type_mnemonics.json. Only the most counter-intuitive asymmetries get an entry here; the rest fall back to the base mnemonic and just get the ⚖️ tag computed from the chart. Attacker is still the subject of every sentence.",
+
+  "electric>ground": "Electricity goes straight to ground and stops cold — but ground swings back 2× because the earth itself smothers current.",
+  "ground>electric": "Ground smothers every current to zero — while electricity can't find a circuit to complete in the dirt.",
+
+  "dragon>fairy": "Dragons can't touch fairies at all — but fairies slay dragons in every legend.",
+  "fairy>dragon": "Fairies are the classic dragonslayer — while dragons can't even land a scratch in return.",
+
+  "psychic>dark": "Psychic can't read a dark mind at all — meanwhile dark minds ambush psychics from the shadows.",
+  "dark>psychic": "Dark preys on the open mind from ambush — while psychics can't read the guarded dark mind at all.",
+
+  "fighting>ghost": "Fighting punches straight through ghosts — meanwhile ghosts can't harm the grounded fighter.",
+  "ghost>fighting": "Ghosts simply don't affect the grounded fighter — meanwhile fighting's fists pass through ghosts entirely.",
+
+  "ground>flying": "Ground attacks can't hit the airborne — but flyers still swoop in and crush rocks.",
+  "flying>ground": "Flyers ignore ground attacks entirely — but rumble doesn't reach the sky either.",
+
+  "ice>dragon": "Ice shatters dragon scales — meanwhile dragons don't care about a little chill.",
+  "ice>flying": "Ice grounds birds with freezing wind — but flying gusts barely disturb ice.",
+  "ice>ground": "Frost heaves shatter hard-packed earth — but ground rumble barely dents ice.",
+  "ice>grass": "Ice withers every leaf — meanwhile grass can't even tickle ice.",
+
+  "fighting>normal": "Fighting lands clean on ordinary bodies — while a casual punch can't match trained muscle.",
+  "fighting>steel": "Trained strikes dent armor plate — but steel blades barely bruise a fighter.",
+
+  "water>ground": "Water floods dry ground into mud — but mudslides can't really hurt water.",
+  "water>rock": "Water carves rock over time — but a rockslide splashes harmlessly.",
+
+  "electric>water": "Electricity ripples through every pool — but splashing water at a wire just conducts without damage.",
+
+  "bug>psychic": "Bugs break concentration with skittering chaos — while psychic tricks don't really faze a bug.",
+  "bug>dark": "Bugs exploit the shadows — but dark tricks don't bother a simple bug.",
+
+  "psychic>poison": "Psychic force overrides toxins — but poison can't really grip a mind.",
+  "psychic>fighting": "Mind tricks stop the muscle cold — meanwhile raw muscle fumbles against psychic shields.",
+
+  "flying>fighting": "Flying strikes from above before fists connect — while ground-bound fists can't reach the sky.",
+
+  "rock>flying": "Rocks clip birds out of the sky — but wings can't shake a mountain."
+}

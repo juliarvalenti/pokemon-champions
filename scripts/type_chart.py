@@ -28,7 +28,14 @@ from rich.live import Live
 from rich.table import Table
 from rich.text import Text
 
-from type_trainer import TYPE_CHART, TYPE_COLORS, MNEMONICS, _T as TYPES  # type: ignore[import-not-found]
+from type_trainer import (  # type: ignore[import-not-found]
+    TYPE_CHART,
+    TYPE_COLORS,
+    MNEMONICS,
+    fmt_mult,
+    is_asymmetric,
+    _T as TYPES,
+)
 
 
 CELL = {
@@ -128,9 +135,18 @@ def main() -> None:
     try:
         with Live(console=console, screen=True, auto_refresh=False) as live:
             while True:
+                atk, defn = TYPES[atk_i], TYPES[def_i]
                 renderable = Table.grid()
                 renderable.add_row(status_line(atk_i, def_i))
-                note = MNEMONICS.get(f"{TYPES[atk_i]}>{TYPES[def_i]}", "")
+                if is_asymmetric(atk, defn):
+                    rev = fmt_mult(TYPE_CHART[defn][atk])
+                    tag = Text.from_markup(
+                        f"[yellow]⚖ asymmetric — reverse {defn}→{atk} is {rev}[/yellow]",
+                        overflow="crop",
+                    )
+                    tag.no_wrap = True
+                    renderable.add_row(tag)
+                note = MNEMONICS.get(f"{atk}>{defn}", "")
                 renderable.add_row(Text(note, style="italic grey70", no_wrap=True, overflow="crop"))
                 renderable.add_row(Text(""))
                 renderable.add_row(render(atk_i, def_i))

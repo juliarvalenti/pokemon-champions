@@ -30,16 +30,19 @@ ROOT = Path(__file__).resolve().parent.parent
 CACHE = ROOT / "cache"
 LOG_PATH = ROOT / "data" / "type_quiz_log.jsonl"
 MNEMONICS_PATH = ROOT / "data" / "type_mnemonics.json"
+ASYM_MNEMONICS_PATH = ROOT / "data" / "type_mnemonics_asymmetries.json"
 
 
-def load_mnemonics() -> dict[str, str]:
-    if not MNEMONICS_PATH.exists():
+def _load_mnemonics(path: Path) -> dict[str, str]:
+    if not path.exists():
         return {}
-    raw = json.load(MNEMONICS_PATH.open())
-    return {k: v for k, v in raw.items() if not k.startswith("_")}
+    return {k: v for k, v in json.load(path.open()).items() if not k.startswith("_")}
 
 
-MNEMONICS = load_mnemonics()
+BASE_MNEMONICS = _load_mnemonics(MNEMONICS_PATH)
+ASYM_MNEMONICS = _load_mnemonics(ASYM_MNEMONICS_PATH)
+# Asymmetry callouts take precedence over the base mnemonic for the same pair.
+MNEMONICS = {**BASE_MNEMONICS, **ASYM_MNEMONICS}
 
 TYPE_COLORS = {
     "normal": "white", "fire": "red", "water": "blue", "electric": "yellow",
@@ -75,6 +78,11 @@ _CHART_ROWS = {
     "fairy":    [1,0.5,1,1,1,1,2,0.5,1,1,1,1,1,1,2,2,0.5,1],
 }
 TYPE_CHART = {atk: dict(zip(_T, row)) for atk, row in _CHART_ROWS.items()}
+
+
+def is_asymmetric(atk: str, defn: str) -> bool:
+    """True if atk→def effectiveness differs from def→atk."""
+    return TYPE_CHART[atk][defn] != TYPE_CHART[defn][atk]
 
 
 def load_jsonl(path: Path) -> list[dict]:
@@ -224,7 +232,11 @@ def run_round(console: Console, pool: list[dict], moves: dict[str, dict]) -> dic
             continue
         note = MNEMONICS.get(f"{move_type}>{dt}")
         if note:
-            console.print(f"  [dim]{move_type} → {dt}:[/dim] {note}")
+            tag = ""
+            if is_asymmetric(move_type, dt):
+                reverse = fmt_mult(TYPE_CHART[dt][move_type])
+                tag = f" [yellow]⚖ asymmetric — reverse {dt}→{move_type} is {reverse}[/yellow]"
+            console.print(f"  [dim]{move_type} → {dt}:[/dim] {note}{tag}")
     console.print()
 
     return {
