@@ -80,6 +80,21 @@ def main() -> None:
         t.add_row(mt, f"{c}/{tot}", f"[{color_for_acc(acc)}]{pct(c, tot)}[/]")
     console.print(t)
 
+    # 2b. Accuracy by actual multiplier bucket.
+    by_mult: dict[float, list[int]] = defaultdict(lambda: [0, 0])
+    for r in rows:
+        by_mult[r["correct_answer"]][0] += int(r["correct"])
+        by_mult[r["correct_answer"]][1] += 1
+    t = Table(title="Accuracy by actual multiplier", title_style="bold")
+    t.add_column("multiplier", justify="right")
+    t.add_column("correct", justify="right")
+    t.add_column("%", justify="right")
+    for m in sorted(by_mult):
+        c, tot = by_mult[m]
+        acc = c / tot
+        t.add_row(fmt_mult(m), f"{c}/{tot}", f"[{color_for_acc(acc)}]{pct(c, tot)}[/]")
+    console.print(t)
+
     # 3. Most-missed matchups.
     miss_counter: Counter[tuple[str, tuple[str, ...]]] = Counter()
     total_counter: Counter[tuple[str, tuple[str, ...]]] = Counter()
