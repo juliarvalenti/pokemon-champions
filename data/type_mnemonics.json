@@ -124,9 +124,9 @@
   "dark>dark": "Dark schemers see each other coming.",
   "dark>fairy": "Dark can't hide from fairy light.",
 
-  "steel>fire": "Steel blades laugh at forge heat.",
-  "steel>water": "Steel cools in water, doesn't break.",
-  "steel>electric": "Steel carries current without damage.",
+  "steel>fire": "Steel blades soften in fire's heat.",
+  "steel>water": "Steel can't cut through flowing water.",
+  "steel>electric": "Steel can't slice through an electric field.",
   "steel>ice": "Steel shatters ice.",
   "steel>rock": "Steel picks split stone.",
   "steel>steel": "Steel blades just ring off each other.",
