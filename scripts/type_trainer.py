@@ -29,6 +29,17 @@ from rich.text import Text
 ROOT = Path(__file__).resolve().parent.parent
 CACHE = ROOT / "cache"
 LOG_PATH = ROOT / "data" / "type_quiz_log.jsonl"
+MNEMONICS_PATH = ROOT / "data" / "type_mnemonics.json"
+
+
+def load_mnemonics() -> dict[str, str]:
+    if not MNEMONICS_PATH.exists():
+        return {}
+    raw = json.load(MNEMONICS_PATH.open())
+    return {k: v for k, v in raw.items() if not k.startswith("_")}
+
+
+MNEMONICS = load_mnemonics()
 
 TYPE_COLORS = {
     "normal": "white", "fire": "red", "water": "blue", "electric": "yellow",
@@ -207,6 +218,13 @@ def run_round(console: Console, pool: list[dict], moves: dict[str, dict]) -> dic
     table.add_row(Text(""), Text(""), Text("total", style="dim"),
                   Text(f" {fmt_mult(actual)}", style=color_for_mult(actual) + " bold"))
     console.print(table)
+
+    for dt, m in zip(defender["types"], per_type):
+        if m == 1:
+            continue
+        note = MNEMONICS.get(f"{move_type}>{dt}")
+        if note:
+            console.print(f"  [dim]{move_type} → {dt}:[/dim] {note}")
     console.print()
 
     return {

@@ -28,7 +28,7 @@ from rich.live import Live
 from rich.table import Table
 from rich.text import Text
 
-from type_trainer import TYPE_CHART, TYPE_COLORS, _T as TYPES  # type: ignore[import-not-found]
+from type_trainer import TYPE_CHART, TYPE_COLORS, MNEMONICS, _T as TYPES  # type: ignore[import-not-found]
 
 
 CELL = {
@@ -130,6 +130,8 @@ def main() -> None:
             while True:
                 renderable = Table.grid()
                 renderable.add_row(status_line(atk_i, def_i))
+                note = MNEMONICS.get(f"{TYPES[atk_i]}>{TYPES[def_i]}", "")
+                renderable.add_row(Text(note, style="italic grey70", no_wrap=True, overflow="crop"))
                 renderable.add_row(Text(""))
                 renderable.add_row(render(atk_i, def_i))
                 renderable.add_row(Text(""))
