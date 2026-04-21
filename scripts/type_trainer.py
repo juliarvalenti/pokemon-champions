@@ -81,8 +81,11 @@ TYPE_CHART = {atk: dict(zip(_T, row)) for atk, row in _CHART_ROWS.items()}
 
 
 def is_asymmetric(atk: str, defn: str) -> bool:
-    """True if atk→def effectiveness differs from def→atk."""
-    return TYPE_CHART[atk][defn] != TYPE_CHART[defn][atk]
+    """True if this matchup is *one-way* — one direction is neutral (1×) but
+    the other isn't. Reciprocal pairs (0.5↔2, 0↔2, 0.25↔4) aren't flagged
+    because they're the expected weakness/resist pattern."""
+    a, b = TYPE_CHART[atk][defn], TYPE_CHART[defn][atk]
+    return (a == 1) != (b == 1)
 
 
 def load_jsonl(path: Path) -> list[dict]:
