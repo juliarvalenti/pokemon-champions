@@ -146,6 +146,8 @@ def main() -> None:
                     )
                     tag.no_wrap = True
                     renderable.add_row(tag)
+                else:
+                    renderable.add_row(Text(""))
                 note = MNEMONICS.get(f"{atk}>{defn}", "")
                 renderable.add_row(Text(note, style="italic grey70", no_wrap=True, overflow="crop"))
                 renderable.add_row(Text(""))
