@@ -1,0 +1,6 @@
+[submodule "sim/showdown"]
+	path = sim/showdown
+	url = https://github.com/smogon/pokemon-showdown.git
+[submodule "sim/ncp-calc"]
+	path = sim/ncp-calc
+	url = https://github.com/nerd-of-now/NCP-VGC-Damage-Calculator.git

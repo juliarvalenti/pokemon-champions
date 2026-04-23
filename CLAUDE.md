@@ -151,6 +151,28 @@ Fetches a Champions tournament from `play.limitlesstcg.com` and returns top-N st
 
 Use this for: "what teams are actually winning Champions tournaments?", scouting top-cut archetypes, finding builds for niche mons that Pikalytics doesn't cover well, validating a team idea against real tournament data.
 
+### Damage Calculator (Champions VGC, NCP-backed)
+```bash
+echo '<JSON>' | node scripts/calc.js
+node scripts/calc_tests.js   # sanity-check the calc still works
+```
+
+Wraps `sim/ncp-calc/` (NCP-VGC-Damage-Calculator — same calc JLuke and other content creators use, actively maintained, Champions-aware) in jsdom for headless calls. Verified roll-by-roll against the live web calc. Returns the 15-roll damage spread + stat-attribution description per move.
+
+**Use the `damage-calc` skill** (`.claude/skills/damage-calc/SKILL.md`) for the full input schema, naming conventions (Showdown vs NCP mega names), Champions-specific gotchas (no Tera, SP not EVs, restricted item pool), and output formatting.
+
+Quick reference — input shape:
+```json
+{
+  "attacker": {"name": "Camerupt-Mega", "ability": "Sheer Force", "item": "Cameruptite",
+               "nature": "Modest", "sps": {"sa": 32}, "moves": ["Earth Power"]},
+  "defender": {"name": "Incineroar", "nature": "Careful", "sps": {"hp": 32, "sd": 20}, "moves": ["Fake Out"]},
+  "field": {"format": "Doubles", "weather": "Sun"}
+}
+```
+
+The calc warns to stderr (typo suggestions, illegal items, SP > 66, etc.) but writes the JSON result to stdout — pipe to `jq` if you want.
+
 ## How to Help
 
 When the user asks about team building, follow this approach:
