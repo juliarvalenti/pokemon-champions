@@ -18,6 +18,7 @@ Two directories hold persistent context. Read these before answering team-buildi
   - `research/archetypes.md` — team archetype templates (sun, sand, rain, TR, stall, hyper offense)
   - `research/core-pairs.md` — high-co-occurrence teammate pairs
   - `research/type-traits.md` — **silent type-based immunities** (Dark immune to Prankster, Grass immune to Powder moves, Ghost immune to trapping, Fire can't burn, etc.). Check before recommending moves — these invalidate common plays.
+  - `research/build-principles.md` — **how to design SP spreads** around named benchmarks (speed creep, "always live X", "always KO Y") instead of max/max. Read before recommending a spread or critiquing one.
 
 When the user asks about their team or builds, **always read the relevant `team/` files first**. When recommending strategy or evaluating a pull, **read `research/` files for the meta context**.
 
